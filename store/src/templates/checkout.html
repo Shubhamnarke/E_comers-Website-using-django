@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %} ">
+
+{% block title %} <title>Store Page</title> {% endblock %}
+
+{% block content %} 
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="box-element" id="form-wrapper">
+			<form id="form">
+				<div id="user-info">
+					<div class="form-field">
+						<input required class = "form-control" type="text" name="name" placeholder="Your name">
+					</div>
+					<div class="form-field">
+						<input required class = "form-control" type="email" name="email" placeholder="Your email">
+					</div>
+					
+
+				</div>
+				<div id="shipping-info">
+					<hr>
+					<p>Shipping Information</p>
+					<hr>
+					<div class="form-field">
+						<input required class = "form-control" type="text" name="address" placeholder="Your email">
+					</div>
+					<div class="form-field">
+						<input required class = "form-control" type="text" name="city" placeholder="Your city">
+					</div>
+					<div class="form-field">
+						<input required class = "form-control" type="text" name="zip-code" placeholder="zip-code">
+					</div>
+					<div class="form-field">
+						<input required class = "form-control" type="text" name="mobile no." placeholder="Your mobile no.">
+					</div>
+					<hr>
+					<input id = "form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+
+				</div>
+			</form>
+		</div>
+		<br>
+		<div class="box-element hidden"  id='payment-info'>
+			<small>GooglePay Options</small>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="box-element">
+			<a class = "btn btn-outline-primary" href="{% url 'cart_view' %}"><-- Back to cart</a>
+			<hr>
+		<h5>
+			Order Summary
+		</h5>
+		<hr>
+			<div class="cart-row">
+				<div style="flex: 2"><img class="row-image" src="{% static 'imgs/place.png' %}"></div>
+				<div style="flex: 2"><h6>Product 1</h6></div>
+				<div style="flex: 1"><h6>Rs 97 /-</h6></div>
+				<div class = "text-right" style="flex: 1;margin-right:20px "><h6>4x</h6></div>
+			</div>
+			<h6>Items : </h6>
+			<h6>Total :</h6>
+		</div>
+
+
+	</div>
+</div>
+
+ {% endblock %}
